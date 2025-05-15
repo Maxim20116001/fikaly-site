@@ -493,7 +493,7 @@
                     <div class="otziv">
                         <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
                         <h2 class="tiptext">Нежная запеканка</h2>
-                        <p class="tiptext">Неожиданно приятный аромат и текстура. Буду заказывать ещё!</p>
+                        <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
                     </div>
                 </div>
             </div>
