@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+исправь header 
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fikalii Site - Лучшие фекалии в мире</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,81 +16,45 @@
         body {
             background-color: #f5f5f5;
             position: relative;
-            padding-top: 80px;
         }
 
-        /* Header Styles */
         .header {
             background-color: #E87400;
+            display: flex;
             width: 100%;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
+            padding: 15px;
+            flex-wrap: wrap;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position:fixed;
         }
 
         .zagolovok {
             color: #ffffff;
             font-weight: 700;
             font-size: 2.5rem;
+            margin-right: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            white-space: nowrap;
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .nav-links p {
-            margin: 0;
+            margin: 5px 0;
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s;
-            padding: 5px 0;
-            position: relative;
+            transition: transform 0.3s;
         }
 
         .nav-links p:hover {
             transform: translateY(-2px);
-        }
-
-        .nav-links p::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: white;
-            transition: width 0.3s;
-        }
-
-        .nav-links p:hover::after {
-            width: 100%;
         }
 
         .glavnaya {
@@ -100,7 +63,8 @@
 
         .auth-buttons {
             display: flex;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .log {
@@ -114,7 +78,6 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            white-space: nowrap;
         }
 
         .log:hover {
@@ -123,7 +86,6 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
-        /* Content Styles */
         .content {
             padding: 20px;
             max-width: 1200px;
@@ -372,10 +334,9 @@
             margin-bottom: 15px;
         }
 
-        /* Media Queries */
         @media (min-width: 768px) {
-            body {
-                padding-top: 90px;
+            .header {
+                padding: 15px 30px;
             }
             
             .zagolovok {
@@ -481,78 +442,73 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo-container">
-                <p class="zagolovok">Fikalii Site</p>
+    <div class="all">
+        <div class="header">
+            <p class="zagolovok">Fikalii Site</p>
+            <div class="nav-links">
+                <p class="glavnaya">Главная</p>
+                <p class="zakazat">Заказать</p>
+                <p>Отзывы</p>
+                <p>О нас</p>
             </div>
-            <nav class="nav-container">
-                <div class="nav-links">
-                    <p class="glavnaya">Главная</p>
-                    <p class="zakazat">Заказать</p>
-                    <p>Отзывы</p>
-                    <p>О нас</p>
-                </div>
-                <div class="auth-buttons">
-                    <button class="log">Вход</button>
-                    <button class="log">Регистрация</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="content">
-        <div class="block1">
-            <div class="about">
-                <h1>Что такое - Fikalii Site?<br>Fikalii Site - это сайт с самыми лучшими фекалиями во всём мире!</h1>
-                <img src="https://i.postimg.cc/tRDyxvJn/Turdlet-in-game.png" alt="Turdlet in game">
-            </div>
-            <div class="gordost">
-                <img src="https://i.postimg.cc/Xvw3ghTf/1-1.png" alt="Symbol of pride">
-                <img src="https://i.postimg.cc/DzVS8fyc/Vector-1.png" alt="Decoration">
-                <h1>Наш символ<br>гордости</h1>
+            <div class="auth-buttons">
+                <button class="log">Вход</button>
+                <button class="log">Регистрация</button>
             </div>
         </div>
-        <div class="block2">
-            <p class="discount">На фекалии действует скидка, успейте купить!</p>
-            <div class="price-container">
-                <span class="price">100</span>
-                <span class="pricespecialoffer">1 кг: 90 руб.</span>
-                <button class="buyspecialoffer">Купить</button>
-            </div>
-            <img src="https://i.postimg.cc/BZyHnpP1/Basic-Poop-1.png" alt="Special offer">
-        </div>
-        <div class="block3">
-            <p class="textotzivi">Что о нас говорят наши клиенты?</p>
-            <div class="otzivi">
-                <div class="otziv">
-                    <img src="https://i.postimg.cc/nccXtwkJ/image.png" alt="genadiy">
-                    <h2 class="tiptext">Генадий</h2>
-                    <p class="tiptext">Отличные фекалии по выгодной цене! Качество на высоте, доставка быстрая. Рекомендую!</p>
+        <div class="content">
+            <div class="block1">
+                <div class="about">
+                    <h1>Что такое - Fikalii Site?<br>Fikalii Site - это сайт с самыми лучшими фекалиями во всём мире!</h1>
+                    <img src="https://i.postimg.cc/tRDyxvJn/Turdlet-in-game.png" alt="Turdlet in game">
                 </div>
-                <div class="otziv">
-                    <img src="https://i.postimg.cc/90HN77Ld/image.png" alt="nuvso">
-                    <h2 class="tiptext">Ну всё</h2>
-                    <p class="tiptext">Самые лучшие фекалии на рынке! Покупаю регулярно, всегда доволен результатом.</p>
-                </div>
-                <div class="otziv">
-                    <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
-                    <h2 class="tiptext">Нежная запеканка</h2>
-                    <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
+                <div class="gordost">
+                    <img src="https://i.postimg.cc/Xvw3ghTf/1-1.png" alt="Symbol of pride">
+                    <img src="https://i.postimg.cc/DzVS8fyc/Vector-1.png" alt="Decoration">
+                    <h1>Наш символ<br>гордости</h1>
                 </div>
             </div>
-        </div>
-        <div class="block4">
-            <h2>Fikalii site - это не только интернет магазин, а ещё память о таком великом сервере как "Чувырлики"</h2>
-            <img src="https://i.postimg.cc/XYhJ0jHM/idk.png" alt="Чувырлики">
-        </div>
-        <div class="block4">
-            <img src="https://i.postimg.cc/cJMVBT8D/image.png" alt="Фото 1">
-            <img src="https://i.postimg.cc/QtYYfzNq/1.png" alt="Фото 2">
-        </div>
-        <div class="block4">
-            <img src="https://i.postimg.cc/VsTHM2Vf/1.png" alt="Фото 3">
-            <img src="https://i.postimg.cc/fbB8bPdh/image.png" alt="Фото 4">
+            <div class="block2">
+                <p class="discount">На фекалии действует скидка, успейте купить!</p>
+                <div class="price-container">
+                    <span class="price">100</span>
+                    <span class="pricespecialoffer">1 кг: 90 руб.</span>
+                    <button class="buyspecialoffer">Купить</button>
+                </div>
+                <img src="https://i.postimg.cc/BZyHnpP1/Basic-Poop-1.png" alt="Special offer">
+            </div>
+            <div class="block3">
+                <p class="textotzivi">Что о нас говорят наши клиенты?</p>
+                <div class="otzivi">
+                    <div class="otziv">
+                        <img src="https://i.postimg.cc/nccXtwkJ/image.png" alt="genadiy">
+                        <h2 class="tiptext">Генадий</h2>
+                        <p class="tiptext">Отличные фекалии по выгодной цене! Качество на высоте, доставка быстрая. Рекомендую!</p>
+                    </div>
+                    <div class="otziv">
+                        <img src="https://i.postimg.cc/90HN77Ld/image.png" alt="nuvso">
+                        <h2 class="tiptext">Ну всё</h2>
+                        <p class="tiptext">Самые лучшие фекалии на рынке! Покупаю регулярно, всегда доволен результатом.</p>
+                    </div>
+                    <div class="otziv">
+                        <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
+                        <h2 class="tiptext">Нежная запеканка</h2>
+                        <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block4">
+                <h2>Fikalii site - это не только интернет магазин, а ещё память о таком великом сервере как "Чувырлики"</h2>
+                <img src="https://i.postimg.cc/XYhJ0jHM/idk.png" alt="Чувырлики">
+            </div>
+            <div class="block4">
+                <img src="https://i.postimg.cc/cJMVBT8D/image.png" alt="Фото 1">
+                <img src="https://i.postimg.cc/QtYYfzNq/1.png" alt="Фото 2">
+            </div>
+            <div class="block4">
+                <img src="https://i.postimg.cc/VsTHM2Vf/1.png" alt="Фото 3">
+                <img src="https://i.postimg.cc/fbB8bPdh/image.png" alt="Фото 4">
+            </div>
         </div>
     </div>
 </body>
