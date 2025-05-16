@@ -442,7 +442,7 @@
 
 <body>
     <div class="all">
-        <div class="header">
+        <div class="header" style"position: fixed;">
             <p class="zagolovok">Fikalii Site</p>
             <div class="nav-links">
                 <p class="glavnaya">Главная</p>
