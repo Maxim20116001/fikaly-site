@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikalii Site - Лучшие фекалии в мире</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,45 +17,81 @@
         body {
             background-color: #f5f5f5;
             position: relative;
+            padding-top: 80px;
         }
 
+        /* Improved Header Styles */
         .header {
             background-color: #E87400;
-            display: flex;
             width: 100%;
-            padding: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
+            padding: 15px 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position:fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
         }
 
         .zagolovok {
             color: #ffffff;
             font-weight: 700;
             font-size: 2.5rem;
-            margin-right: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
 
         .nav-links {
             display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            gap: 25px;
         }
 
         .nav-links p {
-            margin: 5px 0;
+            margin: 0;
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
         }
 
         .nav-links p:hover {
             transform: translateY(-2px);
+        }
+
+        .nav-links p::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s;
+        }
+
+        .nav-links p:hover::after {
+            width: 100%;
         }
 
         .glavnaya {
@@ -63,8 +100,7 @@
 
         .auth-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
         .log {
@@ -78,6 +114,7 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
         }
 
         .log:hover {
@@ -86,6 +123,17 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Content Styles */
         .content {
             padding: 20px;
             max-width: 1200px;
@@ -334,9 +382,10 @@
             margin-bottom: 15px;
         }
 
+        /* Media Queries */
         @media (min-width: 768px) {
-            .header {
-                padding: 15px 30px;
+            body {
+                padding-top: 90px;
             }
             
             .zagolovok {
@@ -438,79 +487,775 @@
                 padding: 0 40px;
             }
         }
+
+        @media (max-width: 992px) {
+            .nav-container {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="all">
-        <div class="header">
-            <p class="zagolovok">Fikalii Site</p>
-            <div class="nav-links">
-                <p class="glavnaya">Главная</p>
-                <p class="zakazat">Заказать</p>
-                <p>Отзывы</p>
-                <p>О нас</p>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <p class="zagolovok">Fikalii Site</p>
             </div>
-            <div class="auth-buttons">
-                <button class="log">Вход</button>
-                <button class="log">Регистрация</button>
+            <nav class="nav-container">
+                <div class="nav-links">
+                    <p class="glavnaya">Главная</p>
+                    <p class="zakazat">Заказать</p>
+                    <p>Отзывы</p>
+                    <p>О нас</p>
+                </div>
+                <div class="auth-buttons">
+                    <button class="log">Вход</button>
+                    <button class="log">Регистрация</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="block1">
+            <div class="about">
+                <h1>Что такое - Fikalii Site?<br>Fikalii Site - это сайт с самыми лучшими фекалиями во всём мире!</h1>
+                <img src="https://i.postimg.cc/tRDyxvJn/Turdlet-in-game.png" alt="Turdlet in game">
+            </div>
+            <div class="gordost">
+                <img src="https://i.postimg.cc/Xvw3ghTf/1-1.png" alt="Symbol of pride">
+                <img src="https://i.postimg.cc/DzVS8fyc/Vector-1.png" alt="Decoration">
+                <h1>Наш символ<br>гордости</h1>
             </div>
         </div>
-        <div class="content">
-            <div class="block1">
-                <div class="about">
-                    <h1>Что такое - Fikalii Site?<br>Fikalii Site - это сайт с самыми лучшими фекалиями во всём мире!</h1>
-                    <img src="https://i.postimg.cc/tRDyxvJn/Turdlet-in-game.png" alt="Turdlet in game">
-                </div>
-                <div class="gordost">
-                    <img src="https://i.postimg.cc/Xvw3ghTf/1-1.png" alt="Symbol of pride">
-                    <img src="https://i.postimg.cc/DzVS8fyc/Vector-1.png" alt="Decoration">
-                    <h1>Наш символ<br>гордости</h1>
-                </div>
+        <div class="block2">
+            <p class="discount">На фекалии действует скидка, успейте купить!</p>
+            <div class="price-container">
+                <span class="price">100</span>
+                <span class="pricespecialoffer">1 кг: 90 руб.</span>
+                <button class="buyspecialoffer">Купить</button>
             </div>
-            <div class="block2">
-                <p class="discount">На фекалии действует скидка, успейте купить!</p>
-                <div class="price-container">
-                    <span class="price">100</span>
-                    <span class="pricespecialoffer">1 кг: 90 руб.</span>
-                    <button class="buyspecialoffer">Купить</button>
+            <img src="https://i.postimg.cc/BZyHnpP1/Basic-Poop-1.png" alt="Special offer">
+        </div>
+        <div class="block3">
+            <p class="textotzivi">Что о нас говорят наши клиенты?</p>
+            <div class="otzivi">
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/nccXtwkJ/image.png" alt="genadiy">
+                    <h2 class="tiptext">Генадий</h2>
+                    <p class="tiptext">Отличные фекалии по выгодной цене! Качество на высоте, доставка быстрая. Рекомендую!</p>
                 </div>
-                <img src="https://i.postimg.cc/BZyHnpP1/Basic-Poop-1.png" alt="Special offer">
-            </div>
-            <div class="block3">
-                <p class="textotzivi">Что о нас говорят наши клиенты?</p>
-                <div class="otzivi">
-                    <div class="otziv">
-                        <img src="https://i.postimg.cc/nccXtwkJ/image.png" alt="genadiy">
-                        <h2 class="tiptext">Генадий</h2>
-                        <p class="tiptext">Отличные фекалии по выгодной цене! Качество на высоте, доставка быстрая. Рекомендую!</p>
-                    </div>
-                    <div class="otziv">
-                        <img src="https://i.postimg.cc/90HN77Ld/image.png" alt="nuvso">
-                        <h2 class="tiptext">Ну всё</h2>
-                        <p class="tiptext">Самые лучшие фекалии на рынке! Покупаю регулярно, всегда доволен результатом.</p>
-                    </div>
-                    <div class="otziv">
-                        <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
-                        <h2 class="tiptext">Нежная запеканка</h2>
-                        <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
-                    </div>
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/90HN77Ld/image.png" alt="nuvso">
+                    <h2 class="tiptext">Ну всё</h2>
+                    <p class="tiptext">Самые лучшие фекалии на рынке! Покупаю регулярно, всегда доволен результатом.</p>
+                </div>
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
+                    <h2 class="tiptext">Нежная запеканка</h2>
+                    <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
                 </div>
             </div>
-            <div class="block4">
-                <h2>Fikalii site - это не только интернет магазин, а ещё память о таком великом сервере как "Чувырлики"</h2>
-                <img src="https://i.postimg.cc/XYhJ0jHM/idk.png" alt="Чувырлики">
-            </div>
-            <div class="block4">
-                <img src="https://i.postimg.cc/cJMVBT8D/image.png" alt="Фото 1">
-                <img src="https://i.postimg.cc/QtYYfzNq/1.png" alt="Фото 2">
-            </div>
-            <div class="block4">
-                <img src="https://i.postimg.cc/VsTHM2Vf/1.png" alt="Фото 3">
-                <img src="https://i.postimg.cc/fbB8bPdh/image.png" alt="Фото 4">
-            </div>
+        </div>
+        <div class="block4">
+            <h2>Fikalii site - это не только интернет магазин, а ещё память о таком великом сервере как "Чувырлики"</h2>
+            <img src="https://i.postimg.cc/XYhJ0jHM/idk.png" alt="Чувырлики">
+        </div>
+        <div class="block4">
+            <img src="https://i.postimg.cc/cJMVBT8D/image.png" alt="Фото 1">
+            <img src="https://i.postimg.cc/QtYYfzNq/1.png" alt="Фото 2">
+        </div>
+        <div class="block4">
+            <img src="https://i.postimg.cc/VsTHM2Vf/1.png" alt="Фото 3">
+            <img src="https://i.postimg.cc/fbB8bPdh/image.png" alt="Фото 4">
         </div>
     </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            const navContainer = document.querySelector('.nav-container');
+            if (navContainer.style.display === 'flex') {
+                navContainer.style.display = 'none';
+            } else {
+                navContainer.style.display = 'flex';
+                navContainer.style.flexDirection = 'column';
+                navContainer.style.position = 'absolute';
+                navContainer.style.top = '100%';
+                navContainer.style.left = '0';
+                navContainer.style.right = '0';
+                navContainer.style.backgroundColor = '#E87400';
+                navContainer.style.padding = '20px';
+                navContainer.style.gap = '15px';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const menuButton = document.querySelector('.mobile-menu-button');
+            
+            if (window.innerWidth <= 992 && 
+                !navContainer.contains(event.target) && 
+                !menuButton.contains(event.target)) {
+                navContainer.style.display = 'none';
+            }
+        });
+
+        // Adjust menu on window resize
+        window.addEventListener('resize', function() {
+            const navContainer = document.querySelector('.nav-container');
+            if (window.innerWidth > 992) {
+                navContainer.style.display = 'flex';
+                navContainer.style.flexDirection = 'row';
+                navContainer.style.position = 'static';
+                navContainer.style.backgroundColor = 'transparent';
+                navContainer.style.padding = '0';
+            } else if (navContainer.style.display === 'flex' && window.innerWidth <= 992) {
+                navContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html> <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikalii Site - Лучшие фекалии в мире</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Nunito Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        /* Improved Header Styles */
+        .header {
+            background-color: #E87400;
+            width: 100%;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .zagolovok {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links p {
+            margin: 0;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links p:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links p::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s;
+        }
+
+        .nav-links p:hover::after {
+            width: 100%;
+        }
+
+        .glavnaya {
+            font-weight: 700;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .log {
+            background-color: #00B2E8;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
+        .log:hover {
+            background-color: #0092bf;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Content Styles */
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .block1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .block2 {
+            background-color: #E87400;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .discount {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            z-index: 2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .price-container {
+            position: relative;
+            z-index: 2;
+            margin-left: 20px;
+        }
+
+        .price {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            display: inline-block;
+            text-decoration: line-through;
+            text-decoration-color: red;
+            text-decoration-thickness: 5px;
+            opacity: 0.7;
+        }
+
+        .pricespecialoffer {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            display: block;
+        }
+
+        .buyspecialoffer {
+            color: #f5f5f5;
+            background-color: #00B2E8;
+            border: 4px solid #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            width: 100%;
+            max-width: 320px;
+            height: 80px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 2;
+            margin-top: 20px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .buyspecialoffer:hover {
+            background-color: #0092bf;
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .block2 img {
+            position: absolute;
+            right: -30px;
+            bottom: -30px;
+            transform: rotate(25deg);
+            max-width: 280px;
+            z-index: 1;
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+        }
+
+        .block2::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background-color: #FFAC5A;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .about {
+            background-color: #E87400;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .about h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .about img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gordost {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            flex: 1 1 400px;
+            justify-content: center;
+        }
+
+        .gordost img:first-child {
+            border-radius: 20px;
+            border: 10px solid #00B2E8;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .gordost img:nth-child(2) {
+            display: none;
+        }
+
+        .gordost h1 {
+            color: #000000;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .block3, .block4 {
+            background-color: #E87400;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .block4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .block4 h2 {
+            color: white;
+            font-size: 2rem;
+            flex: 1 1 400px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .block4 img {
+            flex: 1 1 400px;
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .block4 img:hover {
+            transform: scale(1.02);
+        }
+
+        .tiptext {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .textotzivi {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .otzivi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .otziv {
+            background-color: #FFAC5A;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 100%;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .otziv:hover {
+            transform: translateY(-5px);
+        }
+
+        .otziv img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #00B2E8;
+        }
+
+        .otziv h2 {
+            color: #00B2E8;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            body {
+                padding-top: 90px;
+            }
+            
+            .zagolovok {
+                font-size: 3rem;
+            }
+            
+            .nav-links p {
+                font-size: 1.3rem;
+            }
+            
+            .log {
+                font-size: 1.3rem;
+                padding: 12px 24px;
+            }
+            
+            .about h1 {
+                font-size: 2rem;
+            }
+            
+            .gordost h1 {
+                font-size: 2rem;
+            }
+            
+            .gordost img:nth-child(2) {
+                display: block;
+                transform: scale(0.8);
+                margin: -30px 0;
+            }
+            
+            .discount {
+                font-size: 2.2rem;
+            }
+            
+            .price, .pricespecialoffer {
+                font-size: 2.8rem;
+            }
+            
+            .buyspecialoffer {
+                font-size: 2.2rem;
+                height: 90px;
+            }
+            
+            .block2 img {
+                right: -20px;
+                bottom: -20px;
+                max-width: 320px;
+            }
+            
+            .block2::after {
+                bottom: -150px;
+                left: -100px;
+                width: 500px;
+                height: 500px;
+            }
+
+            .textotzivi {
+                font-size: 2.5rem;
+            }
+
+            .block4 h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .zagolovok {
+                font-size: 3.2rem;
+            }
+            
+            .about h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gordost h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gordost img:nth-child(2) {
+                transform: scale(0.9);
+                margin: -40px 0;
+            }
+            
+            .block2 {
+                padding: 40px;
+            }
+            
+            .block2 img {
+                right: 0;
+                bottom: -30px;
+                max-width: 350px;
+            }
+
+            .otziv {
+                flex: 1 1 250px;
+            }
+
+            .block4 h2 {
+                font-size: 3rem;
+                padding: 0 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-container {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <p class="zagolovok">Fikalii Site</p>
+            </div>
+            <nav class="nav-container">
+                <div class="nav-links">
+                    <p class="glavnaya">Главная</p>
+                    <p class="zakazat">Заказать</p>
+                    <p>Отзывы</p>
+                    <p>О нас</p>
+                </div>
+                <div class="auth-buttons">
+                    <button class="log">Вход</button>
+                    <button class="log">Регистрация</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-button">☰</button>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="block1">
+            <div class="about">
+                <h1>Что такое - Fikalii Site?<br>Fikalii Site - это сайт с самыми лучшими фекалиями во всём мире!</h1>
+                <img src="https://i.postimg.cc/tRDyxvJn/Turdlet-in-game.png" alt="Turdlet in game">
+            </div>
+            <div class="gordost">
+                <img src="https://i.postimg.cc/Xvw3ghTf/1-1.png" alt="Symbol of pride">
+                <img src="https://i.postimg.cc/DzVS8fyc/Vector-1.png" alt="Decoration">
+                <h1>Наш символ<br>гордости</h1>
+            </div>
+        </div>
+        <div class="block2">
+            <p class="discount">На фекалии действует скидка, успейте купить!</p>
+            <div class="price-container">
+                <span class="price">100</span>
+                <span class="pricespecialoffer">1 кг: 90 руб.</span>
+                <button class="buyspecialoffer">Купить</button>
+            </div>
+            <img src="https://i.postimg.cc/BZyHnpP1/Basic-Poop-1.png" alt="Special offer">
+        </div>
+        <div class="block3">
+            <p class="textotzivi">Что о нас говорят наши клиенты?</p>
+            <div class="otzivi">
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/nccXtwkJ/image.png" alt="genadiy">
+                    <h2 class="tiptext">Генадий</h2>
+                    <p class="tiptext">Отличные фекалии по выгодной цене! Качество на высоте, доставка быстрая. Рекомендую!</p>
+                </div>
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/90HN77Ld/image.png" alt="nuvso">
+                    <h2 class="tiptext">Ну всё</h2>
+                    <p class="tiptext">Самые лучшие фекалии на рынке! Покупаю регулярно, всегда доволен результатом.</p>
+                </div>
+                <div class="otziv">
+                    <img src="https://i.postimg.cc/NFGmSGFh/image.png" alt="nejnayazapekanka">
+                    <h2 class="tiptext">Нежная запеканка</h2>
+                    <p class="tiptext">аоаоаоаоаоаоаоаоаоаоатаораоаоаоаао</p>
+                </div>
+            </div>
+        </div>
+        <div class="block4">
+            <h2>Fikalii site - это не только интернет магазин, а ещё память о таком великом сервере как "Чувырлики"</h2>
+            <img src="https://i.postimg.cc/XYhJ0jHM/idk.png" alt="Чувырлики">
+        </div>
+        <div class="block4">
+            <img src="https://i.postimg.cc/cJMVBT8D/image.png" alt="Фото 1">
+            <img src="https://i.postimg.cc/QtYYfzNq/1.png" alt="Фото 2">
+        </div>
+        <div class="block4">
+            <img src="https://i.postimg.cc/VsTHM2Vf/1.png" alt="Фото 3">
+            <img src="https://i.postimg.cc/fbB8bPdh/image.png" alt="Фото 4">
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            const navContainer = document.querySelector('.nav-container');
+            if (navContainer.style.display === 'flex') {
+                navContainer.style.display = 'none';
+            } else {
+                navContainer.style.display = 'flex';
+                navContainer.style.flexDirection = 'column';
+                navContainer.style.position = 'absolute';
+                navContainer.style.top = '100%';
+                navContainer.style.left = '0';
+                navContainer.style.right = '0';
+                navContainer.style.backgroundColor = '#E87400';
+                navContainer.style.padding = '20px';
+                navContainer.style.gap = '15px';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const menuButton = document.querySelector('.mobile-menu-button');
+            
+            if (window.innerWidth <= 992 && 
+                !navContainer.contains(event.target) && 
+                !menuButton.contains(event.target)) {
+                navContainer.style.display = 'none';
+            }
+        });
+
+        // Adjust menu on window resize
+        window.addEventListener('resize', function() {
+            const navContainer = document.querySelector('.nav-container');
+            if (window.innerWidth > 992) {
+                navContainer.style.display = 'flex';
+                navContainer.style.flexDirection = 'row';
+                navContainer.style.position = 'static';
+                navContainer.style.backgroundColor = 'transparent';
+                navContainer.style.padding = '0';
+            } else if (navContainer.style.display === 'flex' && window.innerWidth <= 992) {
+                navContainer.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
