@@ -27,6 +27,7 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position:fixed;
         }
 
         .zagolovok {
@@ -442,7 +443,7 @@
 
 <body>
     <div class="all">
-        <div class="header" style"position: fixed;">
+        <div class="header">
             <p class="zagolovok">Fikalii Site</p>
             <div class="nav-links">
                 <p class="glavnaya">Главная</p>
